@@ -26,8 +26,11 @@ def examples(): #This function creates a file called user_manual.txt
             str3=(a+j).translate(SUB)
             string=str2+str3
             L[position:-3]=string
-            position=position+len(string)
-            L[position:-3]='+'
+            if i==number_of_equation-1 :
+                break
+            else :
+               position=position+len(string)
+               L[position:-3]='+'
             position=position+1
         file.writelines(L)
         file.write('\n')
