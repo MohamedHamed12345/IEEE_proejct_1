@@ -1,7 +1,7 @@
 
 def examples(): #This function creates a file called user_manual.txt
     try :
-        file=open('user_manual.txt','w')
+        file=open('user_manual.txt','w',encoding='utf-8',errors='ignore')
     except :
       file=open('user_manual.txt','x')
     SUB = str.maketrans("0123456789", "₀₁₂₃₄₅₆₇₈₉")
