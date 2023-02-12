@@ -6,7 +6,7 @@ def examples(): #This function creates a file called user_manual.txt
       file=open('user_manual.txt','x',encoding='utf-8',errors='ignore')
     SUB = str.maketrans("0123456789", "₀₁₂₃₄₅₆₇₈₉")
     number_of_equation=int(input("enter number of equations : "))
-    file=open('user_manual.txt','w')
+    file=open('user_manual.txt','w',encoding='utf-8',errors='ignore')
     L = ["Number of equations: ",str(number_of_equation)]
     file.writelines(L)
     file.write('\n')
