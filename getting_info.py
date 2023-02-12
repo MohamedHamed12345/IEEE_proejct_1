@@ -41,4 +41,9 @@ def examples(): #This function creates a file called user_manual.txt
     file.close()
     
     
-examples()
+# examples()
+
+
+
+def getting_equations():
+    pass
