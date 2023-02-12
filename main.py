@@ -1,11 +1,25 @@
 from getting_info import getting_equations, examples
 
-def CheckConsistency():
-	# create a function to test there are solution return =>1
-	# or infinite solution return =>2 
-	# no solution  return => 3
+# create a function to test there are solution return =>1
+# or infinite solution return =>2 
+# no solution  return => 3
+def CheckConsistency(a,n):
+		for i in range(n):
+			sumrow = sum(a[i][:-1])
+			if sumrow == 0:
+				if a[i][-1]==0:
+					return 2
+				return 3
+		return 1
 
-	pass
+
+# this function apply the transformation to the matrix 
+# and at the end of the matrix will be like this a=[[5,0,0],[0,6,0],[0,0,8]]
+# and we call the CheckConsistency
+# to test the matrix and check 
+# after this the main will print 
+# at the end of gauss_jordan_elimination return 1 or 2 or 3
+# and the matrix will modified
 
 def gauss_jordan_elimination(a, n):
 	c = 0
@@ -29,6 +43,13 @@ def gauss_jordan_elimination(a, n):
 				for k in range(n + 1):
 					a[j][k] = a[j][k] - (a[i][k]) * p
 	return CheckConsistency(a,n)
+
+# main should get matrix from the getting_info 
+# and send it to the gauss_jordan_elimination the matrix by reference
+# and will receive the 1 or 2 or 3 
+# and the matrix will be modified 
+# and it will print the solution 
+# the solution a[i][-1]//a[i][i] for i in range(n)
 
 def main():
 	pass
