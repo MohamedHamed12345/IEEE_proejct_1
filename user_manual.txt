@@ -1,0 +1,9 @@
+Number of equations: 8
+eq₁ : a₁₁x₁ + a₁₂x₂ + a₁₃x₃ = a₁₀
+eq₂ : a₂₁x₁ + a₂₂x₂ + a₂₃x₃ = a₂₀
+eq₃ : a₃₁x₁ + a₃₂x₂ + a₃₃x₃ = a₃₀
+eq₄ : a₄₁x₁ + a₄₂x₂ + a₄₃x₃ = a₄₀
+eq₅ : a₅₁x₁ + a₅₂x₂ + a₅₃x₃ = a₅₀
+eq₆ : a₆₁x₁ + a₆₂x₂ + a₆₃x₃ = a₆₀
+eq₇ : a₇₁x₁ + a₇₂x₂ + a₇₃x₃ = a₇₀
+eq₈ : a₈₁x₁ + a₈₂x₂ + a₈₃x₃ = a₈₀
