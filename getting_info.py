@@ -3,7 +3,7 @@ def examples(): #This function creates a file called user_manual.txt
     try :
         file=open('user_manual.txt','w',encoding='utf-8',errors='ignore')
     except :
-      file=open('user_manual.txt','x')
+      file=open('user_manual.txt','x',encoding='utf-8',errors='ignore')
     SUB = str.maketrans("0123456789", "₀₁₂₃₄₅₆₇₈₉")
     number_of_equation=int(input("enter number of equations : "))
     file=open('user_manual.txt','w')
@@ -34,7 +34,7 @@ def examples(): #This function creates a file called user_manual.txt
             position=position+1
         file.writelines(L)
         file.write('\n')
-    file = open("user_manual.txt", "r")
+    file = open("user_manual.txt", "r",encoding='utf-8',errors='ignore')
     f_contents=file.readlines()
     print(f_contents,end='')
     print('\n',__file__)
