@@ -21,7 +21,12 @@ def CheckConsistency(a, n):
 # at the end of gauss_jordan_elimination return 1 or 2 or 3
 # and the matrix will modified 
 #
+'''
+3x 4y =5
+3x 4y =6
 
+0  0   -1
+'''
 
 def gauss_jordan_elimination(a, n):
     c = 0
@@ -44,12 +49,11 @@ def gauss_jordan_elimination(a, n):
                 k = 0
                 for k in range(n + 1):
                     a[j][k] = a[j][k] - (a[i][k]) * p
-
     return a
 
 
 def main():
-
+ 
     def Result(c, n, ans):
         f = open('solution.txt', 'w', encoding='utf-8', errors='ignore')
         if (ans == 2):
@@ -71,7 +75,7 @@ def main():
     # a = [[0, 2, 6, 4], [0, 4, 3, 8], [7, 3, 0, 5]]
     examples()
     while True:
-        ans=input('do you write the equations like user_manual( y or n)').strip()
+        ans=input('do you write the equations like equations( y or n)').strip()
         if ans=='y':break
     a=getting_equations()
     n = len(a)
@@ -82,5 +86,6 @@ def main():
     # print('#' * 120)
     print("the path of  the solution  file is: \n", os.path.abspath('solution.txt'))
     # print('#' * 120)
+
 
 main()
