@@ -67,7 +67,13 @@ def examples():
 # examples()
 def getting_equations():
     
-    path = open(os.path.join(BASE_DIR, " equations.txt"),'r',encoding='utf-8', errors='ignore')
+    try:
+        path = open(os.path.abspath('equations.txt'), 'r',
+                    encoding='utf-8', errors='ignore')
+    except FileNotFoundError:
+        f = open('solution.txt', 'w', encoding='utf-8', errors='ignore')
+        return f.write("file not found!!")
+    
     num=int(path.readline().split()[-1])
     lst=[]
     for line in path:
