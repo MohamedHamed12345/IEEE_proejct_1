@@ -1,6 +1,8 @@
 # create a function to test there are solution return =>1
 # or infinite solution return =>2
 # no solution  return => 3
+import os
+from getting_info import getting_equations ,examples
 
 def CheckConsistency(a, n):
     for i in range(n):
@@ -47,8 +49,8 @@ def gauss_jordan_elimination(a, n):
 
 
 def main():
-    import os
-
+ 
+    
     def Result(c, n, ans):
         f = open('solution.txt', 'w')
         if (ans == 2):
@@ -59,16 +61,21 @@ def main():
             f.write("There is one solution:\n")
             for i in range(n):
                 f.write(str(c[i][n] / c[i][i]) + '\n')
-
-    a = [[0, 2, 6, 4], [0, 4, 3, 8], [7, 3, 0, 5]]
+    
+    # a = [[0, 2, 6, 4], [0, 4, 3, 8], [7, 3, 0, 5]]
+    examples()
+    while True:
+        ans=input('do you write the equations like user_manual( y or n)').strip()
+        if ans=='y':break
+    a=getting_equations()
     n = len(a)
     c = []
     c = gauss_jordan_elimination(a, n)
     ans = CheckConsistency(c, n)
     Result(c, n, ans)
-    print('#' * 120)
-    print("the path of the file is: ", os.path.abspath('solution.txt'))
-    print('#' * 120)
+    # print('#' * 120)
+    print("the path of  the solution  file is: \n", os.path.abspath('solution.txt'))
+    # print('#' * 120)
 
 
 main()
