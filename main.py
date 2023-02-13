@@ -17,7 +17,8 @@ def CheckConsistency(a, n):
 # to test the matrix and check
 # after this the main will print
 # at the end of gauss_jordan_elimination return 1 or 2 or 3
-# and the matrix will modified
+# and the matrix will modified 
+#
 
 
 def gauss_jordan_elimination(a, n):
