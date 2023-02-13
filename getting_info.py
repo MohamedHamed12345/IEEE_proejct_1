@@ -40,8 +40,10 @@ def examples(): #This function creates a file called user_manual.txt
         file.write('\n')
     file = open("user_manual.txt", "r",encoding='utf-8',errors='ignore')
     f_contents=file.readlines()
-    print(f_contents,end='')
-    print('\n',__file__)
+    # print(f_contents,end='')
+    print( " user_manual is in this path ")
+    print('\n',os.path.join(BASE_DIR, " user_manual.txt"))
+    # print('\n',__file__)
     file.close()
     
     
@@ -76,12 +78,10 @@ def getting_equations():
         lst.append(tmplst)
         
        
-    print(lst)
     return lst
 
 
 
-getting_equations()
 
 
 
