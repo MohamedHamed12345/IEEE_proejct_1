@@ -1,7 +1,8 @@
 
-from curses.ascii import isalnum
 
 
+import os.path
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 def examples(): #This function creates a file called user_manual.txt
     try :
         file=open('user_manual.txt','w',encoding='utf-8',errors='ignore')
@@ -52,11 +53,14 @@ def examples(): #This function creates a file called user_manual.txt
 
 
 def getting_equations():
-
-    path = open("/media/mohamed/New Volume/Documents/projects/ieee/IEEE_proejct_1/ equations.txt", "r")
+    
+    path = open(os.path.join(BASE_DIR, " equations.txt"),'r')
     num=int(path.readline().split()[-1])
     lst=[]
     for line in path:
+        line.replace('+',' + ')
+        line.replace('-',' - ')
+        line=line.replace('=',' = ')
         line=line.strip().split()[1:]
         tmplst=[0]*(num+1)
         for idx ,element in enumerate(line):
@@ -65,7 +69,6 @@ def getting_equations():
             
             factor=int(factor)
             if line[idx-1]=='-':factor*=-1
-            print((ordx))
             ordx=int(str(ord(ordx))[3:])
         
             tmplst[ordx-1]=factor
