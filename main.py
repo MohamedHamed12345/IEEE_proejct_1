@@ -65,9 +65,9 @@ def main():
             f.write("There is one solution:\n")
             for i in range(n):
                 try:
-                    f.write(str(c[i][n] / c[i][i]) + '\n')
+                    L = (("x" + str(i + 1)).translate(SUB) + " =  ")
+                    f.write(L + str(c[i][n] / c[i][i]) + '\n')
                 except (ZeroDivisionError):
-                    SUB = str.maketrans("0123456789", "₀₁₂₃₄₅₆₇₈₉")
                     L = (("x" + str(i + 1)).translate(SUB) + " = zero")
                     f.writelines(L)
                     f.write('\n')
