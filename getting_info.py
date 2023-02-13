@@ -1,4 +1,7 @@
 
+from curses.ascii import isalnum
+
+
 def examples(): #This function creates a file called user_manual.txt
     try :
         file=open('user_manual.txt','w',encoding='utf-8',errors='ignore')
@@ -57,15 +60,12 @@ def getting_equations():
         line=line.strip().split()[1:]
         tmplst=[0]*(num+1)
         for idx ,element in enumerate(line):
-            
-            if element=='=':
+            if element in ['+','-'] :continue  
+            elif element =='=':
+                tmplst[-1]=int(line[-1])
                 break
-           
-            if element in ['+','-'] :continue
-          
-                           
             factor,ordx=element.split('x')
-
+            
             factor=int(factor)
             if line[idx-1]=='-':factor*=-1
             ordx=int(str(ord(str(ordx)))[3:])
