@@ -41,7 +41,7 @@ def examples(): #This function creates a file called user_manual.txt
     file.close()
     
     
-# examples()
+# # examples()
 
 
 
@@ -49,10 +49,35 @@ def examples(): #This function creates a file called user_manual.txt
 
 
 def getting_equations():
-    pass
+    path = open("/media/mohamed/New Volume/Documents/projects/ieee/IEEE_proejct_1/ equations.txt", "r")
+    num=int(path.readline().split()[-1])
+    lst=[]
+    for line in path:
+        line=line.strip().split()[1:]
+        tmplst=[0]*(num+1)
+        for idx ,element in enumerate(line):
+            
+            if element=='=':
+                break
+            sign=1
+            if element in ['+','-'] :
+                if element=='-':sign=-1
+                continue           
+            factor,ordx=element.split('x')
+
+            factor=int(factor)* sign
+            ordx=int(str(ord(str(ordx)))[3:])
+        
+            tmplst[ordx-1]=factor
+        lst.append(tmplst)
+        
+       
+    print(lst)
+    return lst
 
 
 
+getting_equations()
 
 
 
