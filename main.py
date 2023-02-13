@@ -58,9 +58,12 @@ def main():
         elif (ans == 3):
             f.write("There is no solution\n")
         else:
+            SUB = str.maketrans("0123456789", "₀₁₂₃₄₅₆₇₈₉")
+
             f.write("There is one solution:\n")
             for i in range(n):
-                f.write(str(c[i][n] / c[i][i]) + '\n')
+                tmp=(f'x{i+1}=').translate(SUB)
+                f.write(tmp+str(c[i][n] / c[i][i]) + '\n')
     
     # a = [[0, 2, 6, 4], [0, 4, 3, 8], [7, 3, 0, 5]]
     examples()
@@ -76,6 +79,5 @@ def main():
     # print('#' * 120)
     print("the path of  the solution  file is: \n", os.path.abspath('solution.txt'))
     # print('#' * 120)
-
 
 main()
