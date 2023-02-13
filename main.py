@@ -47,10 +47,14 @@ def gauss_jordan_elimination(a, n):
 
 
 def main():
-    import os
-
+    """
+    this function prints the solution for the equation 
+    it sends the matrix to the other functions and recive an integar
+    by this integar it can find whether there is a solution or not
+    after that it prints the final answer
+    """
     def Result(c, n, ans):
-        f = open('solution.txt', 'w')
+        f = open('solution.txt', 'w', encoding='utf-8', errors='ignore')
         if (ans == 2):
             f.write("infinite number of solutions\n")
         elif (ans == 3):
@@ -58,17 +62,26 @@ def main():
         else:
             f.write("There is one solution:\n")
             for i in range(n):
-                f.write(str(c[i][n] / c[i][i]) + '\n')
+                try:
+                    f.write(str(c[i][n] / c[i][i]) + '\n')
+                except (ZeroDivisionError):
+                    SUB = str.maketrans("0123456789", "₀₁₂₃₄₅₆₇₈₉")
+                    L = (("x" + str(i + 1)).translate(SUB) + " = zero")
+                    f.writelines(L)
+                    f.write('\n')
+                    continue
 
-    a = [[0, 2, 6, 4], [0, 4, 3, 8], [7, 3, 0, 5]]
+    a = [[0, 0, 1, 5], [0, 0, 2, 10], [0, 0, 1, 5]]
     n = len(a)
     c = []
     c = gauss_jordan_elimination(a, n)
     ans = CheckConsistency(c, n)
     Result(c, n, ans)
-    print('#' * 120)
+
+    import os
+    print('\n', '#' * 150)
     print("the path of the file is: ", os.path.abspath('solution.txt'))
-    print('#' * 120)
+    print('#' * 150, '\n')
 
 
 main()
