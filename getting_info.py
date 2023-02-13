@@ -45,5 +45,29 @@ def examples(): #This function creates a file called user_manual.txt
 
 
 
+
+
+
 def getting_equations():
     pass
+
+
+
+
+
+
+
+# def examples():
+#     num =int(input('hi enter the number of equations : '))
+#     SUB = str.maketrans("0123456789", "₀₁₂₃₄₅₆₇₈₉")
+#     file=open('user_manual.txt', 'w')
+#     file.write(f'Number of equations: {num}\n')
+#     for i in range(1,num+1):
+#         eq=''
+#         for j in range(1,num+1):
+#             if j!=1:eq+='+'               # not add + in last of equation 
+#             eq+=f'a{i}{j} x {j}'          # every time  add term such a11x2
+#         eq+=f'= a{i}\n'                   # at the end of equation add =a2
+#         file.write(eq.translate(SUB))     # write the equation at the end 
+
+# examples()
