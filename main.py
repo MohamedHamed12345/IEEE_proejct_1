@@ -79,7 +79,10 @@ def main():
         ans=input('do you write the equations like equations( y or n)').strip()
         if ans=='y':break
     a=getting_equations()
-    n = len(a)
+    try:
+        n = len(a)
+    except TypeError:
+        exit(0)
     c = []
     c = gauss_jordan_elimination(a, n)
     ans = CheckConsistency(c, n)
