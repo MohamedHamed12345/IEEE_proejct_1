@@ -33,7 +33,7 @@ def examples(): #This function creates a file called user_manual.txt
                 break
             else :
                position=position+len(string)
-               L[position:-3]='+'
+               L[position:-3]=' + '
             position=position+1
         file.writelines(L)
         file.write('\n')
@@ -44,7 +44,7 @@ def examples(): #This function creates a file called user_manual.txt
     file.close()
     
     
-# # examples()
+# examples()
 
 
 
@@ -60,17 +60,16 @@ def getting_equations():
         line=line.strip().split()[1:]
         tmplst=[0]*(num+1)
         for idx ,element in enumerate(line):
-            if element in ['+','-'] :continue  
-            elif element =='=':
-                tmplst[-1]=int(line[-1])
-                break
+            if 'x' not in element :continue
             factor,ordx=element.split('x')
             
             factor=int(factor)
             if line[idx-1]=='-':factor*=-1
-            ordx=int(str(ord(str(ordx)))[3:])
+            print((ordx))
+            ordx=int(str(ord(ordx))[3:])
         
             tmplst[ordx-1]=factor
+        tmplst[-1]=int(line[-1])
         lst.append(tmplst)
         
        
