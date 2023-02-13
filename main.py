@@ -80,5 +80,4 @@ def main():
     print("the path of  the solution  file is: \n", os.path.abspath('solution.txt'))
     # print('#' * 120)
 
-
 main()
