@@ -72,7 +72,7 @@ def getting_equations():
         lst.append(tmplst)
         
        
-    print(lst)
+    # print(lst)
     return lst
 
 
