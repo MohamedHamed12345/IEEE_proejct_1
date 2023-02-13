@@ -49,6 +49,7 @@ def examples(): #This function creates a file called user_manual.txt
 
 
 def getting_equations():
+
     path = open("/media/mohamed/New Volume/Documents/projects/ieee/IEEE_proejct_1/ equations.txt", "r")
     num=int(path.readline().split()[-1])
     lst=[]
@@ -59,20 +60,21 @@ def getting_equations():
             
             if element=='=':
                 break
-            sign=1
-            if element in ['+','-'] :
-                if element=='-':sign=-1
-                continue           
+           
+            if element in ['+','-'] :continue
+          
+                           
             factor,ordx=element.split('x')
 
-            factor=int(factor)* sign
+            factor=int(factor)
+            if line[idx-1]=='-':factor*=-1
             ordx=int(str(ord(str(ordx)))[3:])
         
             tmplst[ordx-1]=factor
         lst.append(tmplst)
         
        
-    # print(lst)
+    print(lst)
     return lst
 
 
