@@ -60,6 +60,7 @@ def examples():
     # print(file.readlines())
     file.close()
 
+
     # print('\n', '#' * 150)
     print("the path of the file is: ", os.path.abspath('user_manual.txt'))
     # print('#' * 150, '\n')

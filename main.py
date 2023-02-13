@@ -1,8 +1,9 @@
 # create a function to test there are solution return =>1
 # or infinite solution return =>2
-# no solution  return => 3
+# no solution  return  3
 import os
 from getting_info import getting_equations ,examples
+
 
 def CheckConsistency(a, n):
     for i in range(n):
