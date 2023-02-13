@@ -49,21 +49,24 @@ def gauss_jordan_elimination(a, n):
 
 
 def main():
- 
-    
+
     def Result(c, n, ans):
-        f = open('solution.txt', 'w')
+        f = open('solution.txt', 'w', encoding='utf-8', errors='ignore')
         if (ans == 2):
             f.write("infinite number of solutions\n")
         elif (ans == 3):
             f.write("There is no solution\n")
         else:
-            SUB = str.maketrans("0123456789", "₀₁₂₃₄₅₆₇₈₉")
-
             f.write("There is one solution:\n")
             for i in range(n):
-                tmp=(f'x{i+1}=').translate(SUB)
-                f.write(tmp+str(c[i][n] / c[i][i]) + '\n')
+                try:
+                    f.write(str(c[i][n] / c[i][i]) + '\n')
+                except (ZeroDivisionError):
+                    SUB = str.maketrans("0123456789", "₀₁₂₃₄₅₆₇₈₉")
+                    L = (("x" + str(i + 1)).translate(SUB) + " = zero")
+                    f.writelines(L)
+                    f.write('\n')
+                    continue
     
     # a = [[0, 2, 6, 4], [0, 4, 3, 8], [7, 3, 0, 5]]
     examples()
